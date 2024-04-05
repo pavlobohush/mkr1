@@ -1,6 +1,7 @@
 import unittest
 from main import read_population_data, sort_by_area, sort_by_population
 
+
 class TestPopulationData(unittest.TestCase):
     def setUp(self):
         """
@@ -18,6 +19,7 @@ class TestPopulationData(unittest.TestCase):
             for country, area, population in self.population_data:
                 file.write(f"{country}, {area}, {population}\n")
 
+
     def test_read_population_data(self):
         """
         Test if read_population_data function reads data from the test file correctly.
@@ -25,6 +27,7 @@ class TestPopulationData(unittest.TestCase):
         expected_data = self.population_data
         actual_data = read_population_data(self.file_path)
         self.assertEqual(actual_data, expected_data)
+
 
     def test_sort_by_area(self):
         """
@@ -34,6 +37,7 @@ class TestPopulationData(unittest.TestCase):
         actual_data = sort_by_area(self.population_data)
         self.assertEqual(actual_data, expected_data)
 
+
     def test_sort_by_population(self):
         """
         Test if sort_by_population function correctly sorts population data by population size.
@@ -42,12 +46,14 @@ class TestPopulationData(unittest.TestCase):
         actual_data = sort_by_population(self.population_data)
         self.assertEqual(actual_data, expected_data)
 
+
     def tearDown(self):
         """
         Clean up the temporary file after each test.
         """
         import os
         os.remove(self.file_path)
+
 
 if __name__ == '__main__':
     unittest.main()

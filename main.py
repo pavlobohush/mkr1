@@ -1,5 +1,6 @@
 import sys
 
+
 def read_population_data(file_path):
     """
     Function to read population data from a file.
@@ -17,6 +18,7 @@ def read_population_data(file_path):
             data.append((country.strip(), float(area.strip()), int(population.strip())))
     return data
 
+
 def sort_by_area(data):
     """
     Function to sort data by area.
@@ -29,6 +31,7 @@ def sort_by_area(data):
     """
     return sorted(data, key=lambda x: x[1])
 
+
 def sort_by_population(data):
     """
     Function to sort data by population.
@@ -40,6 +43,7 @@ def sort_by_population(data):
         list: A list of tuples sorted by population.
     """
     return sorted(data, key=lambda x: x[2])
+
 
 def main():
     """
@@ -64,6 +68,7 @@ def main():
         print("Файл не знайдено.")
     except Exception as e:
         print("Сталася помилка:", e)
+
 
 if __name__ == "__main__":
     sys.stdout.reconfigure(encoding='utf-8')
