@@ -1,6 +1,15 @@
 import sys
 
 def read_population_data(file_path):
+    """
+    Function to read population data from a file.
+
+    Args:
+        file_path (str): The path to the file containing population data.
+
+    Returns:
+        list: A list of tuples, each containing data about a country (name, area, population).
+    """
     data = []
     with open(file_path, 'r', encoding='utf-8') as file:
         for line in file:
@@ -9,12 +18,36 @@ def read_population_data(file_path):
     return data
 
 def sort_by_area(data):
+    """
+    Function to sort data by area.
+
+    Args:
+        data (list): A list of tuples with data about a country (name, area, population).
+
+    Returns:
+        list: A list of tuples sorted by area.
+    """
     return sorted(data, key=lambda x: x[1])
 
 def sort_by_population(data):
+    """
+    Function to sort data by population.
+
+    Args:
+        data (list): A list of tuples with data about a country (name, area, population).
+
+    Returns:
+        list: A list of tuples sorted by population.
+    """
     return sorted(data, key=lambda x: x[2])
 
 def main():
+    """
+    Main function to execute the program.
+
+    Reads population data from a file, sorts it by area and population,
+    and prints the result to the console.
+    """
     try:
         population_data = read_population_data(r"c:\Users\User\mkr\text.txt")
         sorted_by_area = sort_by_area(population_data)
